@@ -3,20 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/nav_home">
-
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="mx.tecnm.voaxaca.curso_material_molina.ui.home.HomeFragment"
-        android:label="fragment_home">
-
-    </fragment>
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/chatFragment"
         android:name="mx.tecnm.voaxaca.curso_material_molina.ui.chats.ChatFragment"
-        android:label="chat_fragment"
-        tools:layout="@layout/chat_fragment" />
-
-
+        android:label="ChatFragment" />
+    <fragment
+        android:id="@+id/itemChatFragment"
+        android:name="mx.tecnm.voaxaca.curso_material_molina.ui.chats.ItemChatFragment"
+        android:label="ItemChatFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="mx.tecnm.voaxaca.curso_material_molina.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_itemChatFragment"
+            app:destination="@id/itemChatFragment" />
+    </fragment>
 </navigation>
